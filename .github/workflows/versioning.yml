@@ -1,3 +1,4 @@
+# The version is automatically updated in the 'development' branch
 # Ensure 'autoVersion.json' exists for the workflow. Use 'fix' for PATCH and 'feat' for MINOR in commit messages; add 'BREAKING CHANGE' as footer for MAJOR updates.
 name: Automatic Version
 
@@ -23,6 +24,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: 'development'
 
       - name: Extract version and set as env variable
         id: extract_version
